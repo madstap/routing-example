@@ -1,6 +1,8 @@
 (defproject spa-routing "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
+                 [kibu/pushy "0.3.8"]
+                 [bidi "2.1.2"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.1"]
                  [secretary "1.2.3"]]

@@ -1,5 +1,6 @@
 (ns spa-routing.views
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [spa-routing.routes :as routes]))
 
 
 ;; home
@@ -8,7 +9,7 @@
   (let [name (re-frame/subscribe [:name])]
     (fn []
       [:div (str "Hello from " @name ". This is the Home Page.")
-       [:div [:a {:href "#/about"} "go to About Page"]]])))
+       [:div [:a {:href (routes/path :about-panel)} "go to About Page"]]])))
 
 
 ;; about
@@ -16,7 +17,7 @@
 (defn about-panel []
   (fn []
     [:div "This is the About Page."
-     [:div [:a {:href "#/"} "go to Home Page"]]]))
+     [:div [:a {:href (routes/path :home-panel)} "go to Home Page"]]]))
 
 
 ;; main
